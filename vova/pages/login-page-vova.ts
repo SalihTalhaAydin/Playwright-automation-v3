@@ -18,11 +18,8 @@ export class LoginTestPage {
         await this.loginButton.click()
     }
     validateMessage(expectedErrorMessage: string): void {
-
-        expect(errorMessage: string).toHaveText(expectedErrorMessage)
+        expect(this.errorMessage).toHaveText(expectedErrorMessage)
     }
-
-
 }
 
 
