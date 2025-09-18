@@ -4,11 +4,13 @@ import {expect , Locator, Page} from '@playwright/test'
         userName: Locator
         password: Locator
         loginButton: Locator
+        errorMessage: Locator
 
         constructor(page: Page) {
             this.userName = page.locator('input[id="user-name"]')
             this.password = page.locator('input[id="password"]')
             this.loginButton = page.locator('input[id="login-button"]')
+            this.errorMessage = page.locator('h3[data-test="error"]')
     
         }
         async login(userName: string, password: string): Promise <void>{
@@ -19,5 +21,7 @@ import {expect , Locator, Page} from '@playwright/test'
 
         
     } 
-
+validateErrorMessage(expectedErrorMessage: string): void {
+        expect(this.errorMessage).toHaveText(expectedErrorMessage)
+    }
 }
