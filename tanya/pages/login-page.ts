@@ -1,5 +1,5 @@
 import{expect, Locator, Page} from "@playwright/test"
-class LoginPage{
+ export class LoginPage{
 
     userName: Locator
     password: Locator
@@ -13,7 +13,7 @@ class LoginPage{
         this.errorMessage = page.locator('h3[data-test="error"]')
 
     }
-    async login(userName: string, password: string){
+    async login(userName: string, password: string): Promise<void>  {
 
         await this.userName.fill(userName)
         await this.password.fill(password)
