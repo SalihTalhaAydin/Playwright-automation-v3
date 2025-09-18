@@ -12,17 +12,17 @@ export class LoginTestPage {
         this.loginButton = page.locator('input[id="login-button"]')
         this.errorMessage = page.locator('h3[data-test="error"]')
     }
-         async loginTest(userName: string, password: string): Promise < void> {
-            await this.userName.fill(userName)
-             await this.password.fill(password)
-              await this.loginButton.click()
-        }
-        validateMessage(expectedErrorMessage: string): void {
-
-            expect(errorMessage:string).toHaveText(expectedErrorMessage)
-        }
-
-
+    async loginTest(userName: string, password: string): Promise<void> {
+        await this.userName.fill(userName)
+        await this.password.fill(password)
+        await this.loginButton.click()
     }
+    validateMessage(expectedErrorMessage: string): void {
+
+        expect(errorMessage: string).toHaveText(expectedErrorMessage)
+    }
+
+
+}
 
 
