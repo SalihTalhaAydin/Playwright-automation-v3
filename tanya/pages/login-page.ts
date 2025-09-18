@@ -13,7 +13,6 @@ class LoginPage{
         this.errorMessage = page.locator('h3[data-test="error"]')
 
     }
-
     async login(userName: string, password: string){
 
         await this.userName.fill(userName)
