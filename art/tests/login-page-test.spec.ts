@@ -8,5 +8,5 @@ test('empty username, valid password', async ({page}) => {
 
     await loginPage.login('', 'secret_sauce')
 
-    await loginPage.validateErrorMessage('Epic sadface: Username is required')
+    loginPage.validateErrorMessage('Epic sadface: Username is required')
 })
