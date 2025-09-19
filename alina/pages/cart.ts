@@ -5,10 +5,12 @@ export class CartPage {
   descriptionHeader: Locator;
   checkOutButton: Locator;
   continueShoppingButton: Locator;
+  
 
   constructor(page: Page) {
     this.qtyHeader = page.locator('div[class="cart_quantity_label"]');
     this.descriptionHeader = page.locator('div[class="cart_desc_label"]');
+     
     this.checkOutButton = page.locator(
       'button[class="btn btn_action btn_medium checkout_button "]'
     );
@@ -16,7 +18,6 @@ export class CartPage {
       'button[id="continue-shopping"]'
     );
   }
-
   async clickCheckout() {
     await this.checkOutButton.click();
   }
