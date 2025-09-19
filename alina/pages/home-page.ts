@@ -4,6 +4,7 @@ export class HomePage {
   hamburgerMenuIcon: Locator;
   filterIcon: Locator;
   mainTitle: Locator;
+  itemAddToCart: Locator;
 
   constructor(page: Page) {
     this.productsTitle = page.locator('span[class="title"]');
@@ -15,8 +16,12 @@ export class HomePage {
     await this.hamburgerMenuIcon.click();
   }
   async clickFilter() {
-    await this.clickFilter();
+    await this.filterIcon.click();
   }
+  async addToCartButton() {
+    await this.itemAddToCart.click();
+  }
+
   async verifyproductsTitle(expectedText: string) {
     await expect(this.productsTitle).toHaveText(expectedText);
   }
